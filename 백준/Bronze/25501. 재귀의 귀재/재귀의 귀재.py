@@ -11,5 +11,5 @@ def isPalindrome(s,cnt):
 
 for _ in range(int(input())):
     cnt = 0
-    i , cnt = isPalindrome(input(), cnt)
-    print(i , cnt)
+    resutl,cnt = isPalindrome(input(), cnt)
+    print(resutl, cnt)
