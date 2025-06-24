@@ -1,30 +1,12 @@
 class Solution {
     boolean solution(String s) {
-        boolean answer = true;
-        char[] chars = s.toCharArray();
         int sum = 0;
-        for (int i = 0; i < chars.length; i++){
-            if (i == 0 && chars[i] == ')'){
-                sum--;
-                answer = false;
-                break;
-            } else if(sum < 0){
-                answer = false;
-                break;
-            }
-            
-            if (chars[i] == '('){
-                sum++;
-            }
-            else if (chars[i] == ')'){
-                sum--;
-            }
+        for (char c : s.toCharArray()) {
+            if (c == '(') sum++;
+            else sum--;
+
+            if (sum < 0) return false;
         }
-        if (sum == 0){
-            answer = true;
-        } else{
-            answer = false;
-        }
-        return answer;
+        return sum == 0;
     }
 }
